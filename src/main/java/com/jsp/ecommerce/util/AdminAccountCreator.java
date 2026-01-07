@@ -88,7 +88,6 @@ public class AdminAccountCreator implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println(passwordEncoder.matches(adminPassword, "$2a$10$VbgZC5ooDyWIhEDvW2RX1OVdaUirUJKu6b4maBY5eECXk2Xiqq0Iq"));
 		log.info("Admin Account Creation Started");
 		if (userRepository.existsByEmail(adminEmail)) {
 			log.info("Admin Account Already Exists");
