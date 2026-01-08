@@ -24,4 +24,12 @@ public class RedisService {
 		redisTemplate.opsForValue().set(email+"_merchant", merchantDto,Duration.ofMinutes(30));
 	}
 
+	public MerchantDto getTempData(String email) {
+		return (MerchantDto) redisTemplate.opsForValue().get(email+"_merchant");
+	}
+
+	public Integer getOtp(String email) {
+		return (Integer) redisTemplate.opsForValue().get(email+"_otp");
+	}
+
 }
