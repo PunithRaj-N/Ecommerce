@@ -13,6 +13,10 @@ import lombok.RequiredArgsConstructor;
 public class UserDao {
 
 	private final UserRepository userRepository;
+	
+	public boolean checkEmailAndMobileDuplicate(String email,Long mobile) {
+		return userRepository.existsByEmailOrMobile(email,mobile);
+	}
 
 	public User findByEmail(String email) {
 		return userRepository.findByEmail(email).orElseThrow();
