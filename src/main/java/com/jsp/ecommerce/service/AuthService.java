@@ -3,16 +3,11 @@ package com.jsp.ecommerce.service;
 
 import java.util.Map;
 
+import com.jsp.ecommerce.dto.CustomerDto;
 import com.jsp.ecommerce.dto.MerchantDto;
 import com.jsp.ecommerce.dto.OtpDto;
 
-import jakarta.validation.Valid;
-
-//import com.jsp.ecommerce.dto.LoginDto;
-
 public interface AuthService {
-
-//	Map<String, Object> login(LoginDto loginDto);
 
 	Map<String, Object> login(String email, String password);
 
@@ -22,9 +17,14 @@ public interface AuthService {
 
 	Map<String, Object> registerMerchant(MerchantDto merchantDto);
 
-	Map<String, Object> resendOtp(String email);
+	Map<String, Object> verifyMerchantOtp(OtpDto dto);
 
-	Map<String, Object> verifyOtp(@Valid OtpDto dto);
+	Map<String, Object> resendMerchantOtp(String email);
 	
+	Map<String, Object> registerCustomer(CustomerDto customerDto);
+
+	Map<String, Object> verifyCustomerOtp(OtpDto dto);
+
+	Map<String, Object> resendCustomerOtp(String email);
 
 }
