@@ -1,3 +1,4 @@
+
 package com.jsp.ecommerce.entity;
 
 import jakarta.persistence.Column;
@@ -15,7 +16,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Merchant {
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -25,8 +25,7 @@ public class Merchant {
 	private String address;
 	@Column(nullable = false)
 	private String gstNo;
-	
+
 	@OneToOne
 	private User user;
-
 }
